@@ -1,7 +1,7 @@
 language: cpp
-
-script:./SetupLinux.sh
-
+compiler:
+    - gcc-4.8
+script: ./SetupLinux.sh
 install:
     - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
     - sudo apt-get -qq update
