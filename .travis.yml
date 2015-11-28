@@ -13,3 +13,12 @@ install:
   # g++4.8.1
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; fi
+after_success:
+  -curl -T <FILE.EXT> -usoma-arc:$BINTRAY-API-KEY https://api.bintray.com/content/soma-arc/generic/<YOUR_COOL_PACKAGE_NAME>/<VERSION_NAME>/<FILE_TARGET_PATH>
+deploy:
+  provider: bintray
+  file: "bintray.desc"
+  user: "soma-arc"
+  key: $BINTRAY-API-KEY
+env:
+  secure: "Ku8Y4Ij9dkQp5YB/iu6UjGEwguTiA6TkOuQdUBxv/TsRrjmLHkCIoHZqVn36VIUBGPejZNlmeGF/OULtWF9dJWzKSix0yF8ZAGBGGkXGEfEKatwU5mBc93K61mKtDByVXYVyFoEQ+Aqh0DK0iIsasve0VCHyvx6AwuzXIDqoHCQGw5Gi2szhETtIl0GEaYsntMAwrjI4apVBMzx8Mol2Z22pMq+W5UIUA1H8G64kEgvS75tuN0whWLscpatYqyLitvdHlg8gDZuZFEec3lBAj+keDC/tdkvoB/f1LSFtDw3c2cHIlrAEywtfSMkt7GQMU3ZQPg5M69nNvFkhlSUGJLV1nuUeGEMPpf4SaPGb4aSn+CmEt4uFmNHjF00yo8JUwJvEcp+R3OuU39+J73m5iMWNgfQ64Z51H/H7aKIdafRVTnWkBaaiCNgfYENWQcjR1ZqoUzF8v55bpSU6YTNHWPxTVhLRPAMSViWMgF8WPe3FJw8tU2dMKRO4SIT57f6XwpGGKnz7mmA9rwjaC8sQSH2bIJsrDjCftHmCcb6gIB4KSy9CAqT0oFxHrZw9G+9SNE8dPMOH4KOA/XPV72TqagwSk9ICeJcutu3lh6E/wY00fm7/8HtlzvzBQA09YbWa2ua30tGx4bS1PFJMAKDYL8laP6ibj93mKKo5KSZxrYU="
