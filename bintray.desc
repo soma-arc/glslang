@@ -4,8 +4,8 @@
        fields are mandatory. */
 
     "package": {
-        "name": "glslang", // Bintray package name
-        "repo": "generic" // Bintray repository name
+        "name": "generic", // Bintray package name
+        "repo": "glslang" // Bintray repository name
     },
 
     /* Package version information.
