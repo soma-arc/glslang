@@ -1,3 +1,4 @@
+sudo: false
 language: cpp
 compiler:
     - gcc
@@ -17,7 +18,7 @@ after_success:
   -curl -T <FILE.EXT> -usoma-arc:$BINTRAY-API-KEY https://api.bintray.com/content/soma-arc/generic/<YOUR_COOL_PACKAGE_NAME>/<VERSION_NAME>/<FILE_TARGET_PATH>
 deploy:
   provider: bintray
-  file: "bintray.desc"
+  file: "~/build/soma-arc/glslang/bintray.desc"
   user: "soma-arc"
   key: $BINTRAY-API-KEY
 env:
