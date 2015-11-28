@@ -5,7 +5,7 @@
 
     "package": {
         "name": "glslang", // Bintray package name
-        "repo": "glslang" // Bintray repository name
+        "repo": "generic" // Bintray repository name
     },
 
     /* Package version information.
